@@ -1,0 +1,246 @@
+body {
+    background-color: white;
+}
+
+.header {
+    width: 75%;
+    margin: auto;
+}
+
+.nav-bar {
+    /* border: 1px solid black; testing */
+    width: 75%;
+    margin: auto;
+    padding: 25px 0;
+}
+
+.login {
+    width: 75%;
+    display: inline-block;
+    text-align: left;
+}
+
+.button { 
+    font-family: Tahoma, sans-serif;
+    font-size: 125%;
+    background-color: #27374D;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-right: 20px;
+    border-radius: 12px;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+.add-button {
+    font-family: Tahoma, sans-serif;
+    font-size: 125%;
+    background-color: #27374D;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+}
+
+.add-button:hover {
+    opacity: 0.8;
+}
+
+.add-task {
+    display: inline-block;
+    width: 25%;
+    text-align: right;
+}
+
+.tasklist {
+    width: 90%;
+    margin: auto;
+}
+
+.task {
+    border-bottom: 3px solid #27374D;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.task-name {
+    margin: 0;
+    padding: 0px 20px;
+    font-family: Tahoma, sans-serif;
+    background-color: darkred;
+    color: white;
+    width: 25%;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    border-right: 3px solid #27374D;
+}
+
+.name-text {
+    font-size: 130%;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.task-time {
+    font-family: Georgia, serif;
+    font-size: 90%;
+    margin: 5px 0;
+    margin-bottom: 10px;
+}
+
+.task-details {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid black; /*testing*/
+    padding: 0;
+    margin: 0;
+    width: 75%;
+    box-sizing: border-box;
+    vertical-align: top;
+    height: 100%;
+    position: absolute;
+    background-color: #DDE6ED;
+}
+
+.details-text {
+    margin: auto;
+    font-size: 75%;
+    font-family: Georgia, sans-serif;
+    padding: 5px 5px;
+    color: #27374D; 
+    font-weight: bold;
+}
+
+h1 {
+    font-family: Tahoma, sans-serif;
+    color: #27374D;
+    text-align: center;
+    font-size: 475%;
+    margin: 0;
+    padding: 0; 
+}
+
+p#tagline {
+    font-family: Georgia, serif;
+    text-align: center;
+    color: #27374D;
+    font-size: 150%;
+    border-bottom: 4px solid #27374D; 
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
+}
+
+p#empty-list {
+    text-align: center;
+    font-family: Tahoma, sans-serif;
+    font-size: 72px;
+    color: lightgray;
+    font-style: italic;
+    margin: 5% auto;
+}
+
+h2#tasklist-title, h2#new-task-title{
+    margin-top: 0;
+    /* border: 1px solid black; */
+    text-align: center;
+    font-family: Tahoma, sans-serif;
+    color: #27374D;
+}
+
+h2#new-task-title {
+    margin-bottom: 0;
+}
+
+div#task-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+}
+
+fieldset {
+    background-color: #DDE6ED;
+    width: 60%;
+    display: block;
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+div#add-popup {
+    background-color: white;
+    width: 30%;
+    min-width: auto;
+    margin: 10% auto;
+    padding-bottom: 3%;
+    border-radius: 10px;
+}
+
+span#close {
+    margin-left: 10px;
+    padding: 0;
+    font-size: 200%;
+    text-align: left;
+    color: darkgray;
+}
+
+span#close:hover {
+    color: black;
+}
+
+label {
+    display: block;
+    text-align: center;
+    font-family: Tahoma, sans-serif;
+    font-weight: bold;
+    color: #27374D;
+    margin: 20px 0;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: auto;
+    font-family: Tahoma, sans-serif;
+    background-color: #27374D;
+    font-size: 100%;
+    border: none;
+    color: white;
+    width: 50%;
+    border-radius: 10px;
+} 
+
+input[type="submit"]:hover {
+    opacity: 0.8;
+}
+
+textarea {
+    display: block;
+    margin: auto;
+}
+
+input#submit {
+    font-family: Tahoma, sans-serif;
+    font-size: 100%;
+    background-color: #27374D;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 12px;
+    margin: auto;
+    display: inline-block;
+    border: none;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoToday</title>
+    <link rel="stylesheet" href="stylesheet.css"/>
+    <script>
+        function openModal() {
+            const modal = document.getElementById("task-modal");
+            modal.style.display = "block";
+        }
+
+        function addTask() {
+            closeModal();
+
+            const task = document.createElement("div");
+            task.className = "task";
+
+            const taskName = document.createElement("div");
+            taskName.className = "task-name";
+            taskName.style.backgroundColor = "darkred";
+
+            const nameText = document.createElement("p");
+            nameText.className = "name-text";
+
+            let tName = document.getElementById("task-name").value;
+            if (tName == "") {
+                tName = "Untitled Task";
+            }
+            nameText.innerHTML = tName;
+
+            const taskTime = document.createElement("p");
+            taskTime.className = "task-time";
+            let startTime = document.getElementById("start-time").value;
+            let endTime = document.getElementById("end-time").value;
+            if (startTime == "" && endTime == "")  {
+                taskTime.innerHTML = "No Specified Time";
+            } else {
+                taskTime.innerHTML = startTime + " - " + endTime;
+            }
+
+            const taskDetails = document.createElement("div");
+            taskDetails.className = "task-details";
+            
+            const detailsText = document.createElement("p");
+            detailsText.className = "details-text";
+            let text = document.getElementById("details").value;
+            if(text == "") {
+                detailsText.innerHTML = "No Additional Details";
+            } else {
+                detailsText.innerHTML = text;
+            }
+            
+            taskName.appendChild(nameText);
+            taskName.appendChild(taskTime);
+            taskDetails.appendChild(detailsText);
+            task.appendChild(taskName);
+            task.appendChild(taskDetails);
+
+            const taskList = document.getElementsByClassName("tasklist");
+            const noTaskText = document.getElementById("empty-list");
+            if(noTaskText != null) {
+                taskList[0].removeChild(noTaskText);
+            }
+            taskList[0].style.border = "3px solid #27374D";
+            taskList[0].style.borderBottom = "none";
+            taskList[0].appendChild(task);
+            taskName.onclick = function() { 
+                if(taskName.style.backgroundColor == "darkred") {
+                    taskName.style.backgroundColor = "darkgreen";
+                } else {
+                    taskName.style.backgroundColor = "darkred";
+                }
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("task-modal");
+            modal.style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>DoToday</h1>
+        <p id="tagline">The Task List For Procrasinators</p>
+    </div>
+
+    <div class="nav-bar">
+        <div class="login">
+        </div><div class="add-task">
+            <a onclick="openModal()" class="add-button">Add Task</a>
+        </div>
+    </div>
+
+    <h2 id="tasklist-title">Your Task List: </h2>
+    <div class="tasklist">
+        <p id="empty-list">Nothing to Do?</p>
+        <!--TASKS GO HERE-->
+    </div>
+
+    <div id="task-modal">
+        <div id="add-popup">
+            <span id="close" onclick="closeModal()">&times;</span>
+            <h2 id="new-task-title">New Task</h2>
+            <form id="task-form">
+                <fieldset>
+                    <label for="task-name">Task Name: <input type="text" id="task-name" name="task-name"/></label>
+                    <label for="start-time">Start Time: <input type="time" id="start-time" name="start-time"/></label>
+                    <label for="end-time">End Time: <input type="time" id="end-time" name="end-time"/></label>
+                    <label for="details">Details: <textarea id="details" name="details"></textarea></label>
+                    <input type="reset" id="submit" onclick="addTask()" value="Submit"/>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
